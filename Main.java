@@ -7,14 +7,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        /**
         try {
             Object result = Arithmetic.operations(list("+", 1, 2, 3));
             System.out.println(result); // Imprime -7
             result = Arithmetic.operations(list("-", 1, 5, 3));
-            System.out.println(result); // Imprime 5
+            System.out.println(result); // Imprime 6
             result = Arithmetic.operations(list("*", 2, 3));
             System.out.println(result); // Imprime 6
-            result = Arithmetic.operations(list("/", 10, 2));
+            result = Arithmetic.operations(list("/", 0, 0));
             System.out.println(result); // Imprime 5
             result = Arithmetic.operations(list("+", 1, list("*", 2, 3)));
             System.out.println(result); // Imprime 7
@@ -22,13 +24,17 @@ public class Main {
             System.err.println(e.getMessage());
         }
 
-    }
+    }*/
+        /**
     public static List<Object> list(Object... elements) {
         LinkedList<Object> list = new LinkedList<>();
         for (Object element : elements) {
             list.add(element);
         }
         return list;
+    }*/
+
+
     }
 
 }
