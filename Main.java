@@ -34,6 +34,11 @@ public class Main {
         return list;
     }*/
 
+        Setq<String, String> setq = new Setq<>();
+        setq.setq("l", "adios ");
+        System.out.println(setq.get("l"));
+
+
 
     }
 
