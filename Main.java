@@ -35,16 +35,8 @@ public class Main {
         return list;
     }*/
 
-        System.out.println(Predicate.lessThan(1,2));
-        System.out.println(Predicate.greaterThan(1,2));
-        System.out.println(Predicate.atom("sss"));
-        System.out.println(Predicate.list("SSS"));
-
-        Setq<String, Integer> setq = new Setq<>();
-        setq.setq("dos",2);
-        setq.setq("uno",1);
-
-        System.out.println(Predicate.lessThan(setq.get("dos"),setq.get("uno")));
+        ReservedWords reservedWords = new ReservedWords();
+        System.out.println(reservedWords.getReservedWords().get(0));
 
 
     }

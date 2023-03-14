@@ -7,11 +7,24 @@ public class Worker {
 
     LinkedList<String> instruccions;
 
-    public Worker (LinkedList<String> instruccions){
+    public Worker(LinkedList<String> instruccions) {
         this.instruccions = new LinkedList<>();
     }
 
+    //------------------------------------------------------------------//
+    public void work() {
+        for (String string : instruccions) {
+            //ReservedWords
 
+            //if (ReservedWords.contains(string)){
+            System.out.println("word reserve: " + string);
+
+
+        }
+
+
+    }
 
 
 }
+

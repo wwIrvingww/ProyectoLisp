@@ -5,6 +5,12 @@ import java.util.Arrays;
 public class ReservedWords {
 
 	private ArrayList<String> ReservedWords = new ArrayList<String>();
+
+	public ArrayList<String> getReservedWords() {
+		return ReservedWords;
+	}
+
+
 	    
 	
 	public ReservedWords() {
