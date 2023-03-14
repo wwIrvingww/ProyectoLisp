@@ -4,6 +4,7 @@
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,10 +35,16 @@ public class Main {
         return list;
     }*/
 
-        Setq<String, String> setq = new Setq<>();
-        setq.setq("l", "adios ");
-        System.out.println(setq.get("l"));
+        System.out.println(Predicate.lessThan(1,2));
+        System.out.println(Predicate.greaterThan(1,2));
+        System.out.println(Predicate.atom("sss"));
+        System.out.println(Predicate.list("SSS"));
 
+        Setq<String, Integer> setq = new Setq<>();
+        setq.setq("dos",2);
+        setq.setq("uno",1);
+
+        System.out.println(Predicate.lessThan(setq.get("dos"),setq.get("uno")));
 
 
     }
