@@ -6,6 +6,9 @@ import java.util.LinkedList;
 public class Worker {
 
     LinkedList<String> instruccions;
+    String path ="C:\\Users\\USUARIO\\OneDrive\\UVG\\Clases\\Tercer Semestre\\Estructura de datos\\Codes\\ProyectoLisp\\code.txt";
+    Reader reader = new Reader();
+    ReservedWords reservedWords = new ReservedWords();
 
     public Worker(LinkedList<String> instruccions) {
         this.instruccions = new LinkedList<>();
@@ -13,13 +16,17 @@ public class Worker {
 
     //------------------------------------------------------------------//
     public void work() {
+
         for (String string : instruccions) {
-            //ReservedWords
+            if (reservedWords.getReservedWords().contains(string)) {
+                switch (string){
+                    case "+":
 
-            //if (ReservedWords.contains(string)){
-            System.out.println("word reserve: " + string);
+                }
 
 
+
+            }
         }
 
 
