@@ -18,10 +18,11 @@ public class Main {
 
         int result = Arithmetic.evaluate(input);
         System.out.println(result); // Imprime "9.0"*/
-
-        Worker worker = new Worker();
-        worker.work();
-
+        Reader reader  = new Reader();
+        String path ="C:\\Users\\USUARIO\\OneDrive\\UVG\\Clases\\Tercer Semestre\\Estructura de datos\\Codes\\ProyectoLisp\\code.txt";
+        ArrayList<String> arrraylist = Reader.readFile(path);
+        LinkedList<String> linkedList = reader.convertArrayList(arrraylist);
+        System.out.println(linkedList.size());
 
 
 
