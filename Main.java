@@ -19,18 +19,16 @@ public class Main {
         int result = Arithmetic.evaluate(input);
         System.out.println(result); // Imprime "9.0"*/
 
+        Worker worker = new Worker();
+        worker.work();
 
-        LinkedList<String> instruccions;
-        String path ="C:\\Users\\USUARIO\\OneDrive\\UVG\\Clases\\Tercer Semestre\\Estructura de datos\\Codes\\ProyectoLisp\\code.txt";
-        Reader reader = new Reader();
-        ArrayList<String> arrayList = Reader.readFile(path);
-        instruccions = reader.convertArrayList(arrayList);
 
-        ArrayList<String> parentesis = Worker.getElementsInsideParentheses(instruccions);
+
+
         /**for (String a: parentesis){
             System.out.println(a);
         }*/
-        System.out.println(parentesis.size());
+
 
 
 
@@ -42,13 +40,5 @@ public class Main {
 
 
 
-        /**
-    public static List<Object> list(Object... elements) {
-        LinkedList<Object> list = new LinkedList<>();
-        for (Object element : elements) {
-            list.add(element);
-        }
-        return list;
-    }*/
 
 }

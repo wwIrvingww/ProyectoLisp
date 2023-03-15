@@ -13,13 +13,27 @@ public class Worker {
     Reader reader = new Reader();
     ReservedWords reservedWords = new ReservedWords();
 
-    public Worker(LinkedList<String> instruccions) {
+    /**public Worker(LinkedList<String> instruccions) {
         this.instruccions = new LinkedList<>();
-    }
+    }*/
 
     //------------------------------------------------------------------//
     public void work() {
-            getElementsInsideParentheses(instruccions);
+        Reader reader = new Reader();
+        ArrayList<String> arrayList = Reader.readFile(path);
+        instruccions = reader.convertArrayList(arrayList);
+
+        ArrayList<String> parentesis = Worker.getElementsInsideParentheses(instruccions);
+
+
+            for (String string: parentesis){
+                if (string.equals("+") || string.equals("-") || string.equals("*") || string.equals("/")) {
+                    int result = Arithmetic.evaluate(parentesis);
+                    System.out.println(result);
+                }
+
+
+            }
 
 
     }
@@ -55,17 +69,19 @@ public class Worker {
         return elementsInParentheses;
     }
 
-    public static ArrayList<String> splitAarraylist(ArrayList<String> lista) {
-        String str = lista.get(0);
-        char[] chars = str.toCharArray();
-        ArrayList<String> resultado = new ArrayList<String>();
+        public static ArrayList<String> splitAarraylist(ArrayList<String> lista) {
+            String str = lista.get(0);
+            char[] chars = str.toCharArray();
+            ArrayList<String> resultado = new ArrayList<String>();
 
-        for (char c : chars) {
-            resultado.add(Character.toString(c));
+            for (char c : chars) {
+                if (c != ' ') {
+                    resultado.add(Character.toString(c));
+                }
+            }
+
+            return resultado;
         }
-
-        return resultado;
-    }
 
 
 
