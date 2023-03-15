@@ -1,4 +1,3 @@
-
 public class DefunLector {
 
 	public DefunLector() {

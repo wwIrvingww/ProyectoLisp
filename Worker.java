@@ -145,7 +145,11 @@ public class Worker {
             System.out.println(firsWord);
 
             if (reservedWords1.getReservedWords().contains(firsWord)){
-                System.out.println("Palabra reservada: "+ firsWord);
+                if (firsWord.equals("+") || firsWord.equals("-") || firsWord.equals("*") || firsWord.equals("/")){
+                    int result = Arithmetic.evaluate(instruction);
+                    System.out.println("el resultado es: " + result);
+
+                }
 
             }
 
@@ -173,18 +177,6 @@ public class Worker {
         }
         return arrayList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 }
 
