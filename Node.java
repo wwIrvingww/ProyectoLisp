@@ -6,4 +6,14 @@ public class Node <T> {
         this.value = value;
         this.next = null;
     }
+
+    public T getValue() {
+        return value;
+    }
+
+    public Node<T> getNext() {
+        return next;
+    }
+
+
 }

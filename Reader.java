@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Reader{
+public class Reader {
 
-        public static ArrayList<String> readFile(String fileName){
-            ArrayList<String> lines = new ArrayList<>();
+    public static ArrayList<String> readFile(String fileName) {
+        ArrayList<String> lines = new ArrayList<>();
 
         try {
             FileReader fileReader = new FileReader(fileName);
@@ -50,5 +50,23 @@ public class Reader{
         }
         return listCaracter;
     }
+
+    public LinkedListt<String> raderLinked(String path) {
+        LinkedListt<String> linkedListt = new LinkedListt();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                linkedListt.push(line);
+            }
+        } catch (IOException e) {
+            System.err.format("Error al leer el archivo: %s%n", e);
+        }
+
+        return linkedListt;
+    }
+
+
+
 
 }

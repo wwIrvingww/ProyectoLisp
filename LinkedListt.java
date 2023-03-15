@@ -1,5 +1,5 @@
 
-public class LinkedList <T> {
+public class LinkedListt<T> {
     private Node<T> head;
     private int size;
 
@@ -29,6 +29,11 @@ public class LinkedList <T> {
         }
         return head.value;
     }
+
+    public Node<T> getHead() {
+        return head;
+    }
+
 
     public int size(){
         return size;
