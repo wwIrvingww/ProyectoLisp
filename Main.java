@@ -9,47 +9,17 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Object> expression1 = new ArrayList<>();
-        expression1.add("+");
-        expression1.add(4);
-        expression1.add(4);
 
-        ArrayList<Object> expression2 = new ArrayList<>();
-        expression2.add("*");
-        expression2.add(2);
-        expression2.add(expression1);
+        ArrayList<String> input = new ArrayList<>();
+        input.add("+");
+        input.add("2");
+        input.add("3");
+        input.add("4");
 
-        try {
-            int result1 = (int) Arithmetic.operations(expression1);
-            System.out.println(result1); // Output: 8
+        int result = Arithmetic.evaluate(input);
+        System.out.println(result); // Imprime "9.0"
 
-            int result2 = (int) Arithmetic.operations(expression2);
-            System.out.println(result2); // Output: 16
-        } catch (LispException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-        /**
-        try {
-
-            Object result = Arithmetic.operations(("+", 1, 2, 3));
-            System.out.println(result); // Imprime -7
-            result = Arithmetic.operations(list("-", 1, 5, 3));
-            System.out.println(result); // Imprime 6
-            result = Arithmetic.operations(list("*", 2, 3));
-            System.out.println(result); // Imprime 6
-            result = Arithmetic.operations(list("/", 0, 0));
-            System.out.println(result); // Imprime 5
-            result = Arithmetic.operations(list("+", 1, list("*", 2, 3)));
-            System.out.println(result); // Imprime 7
-        } catch (LispException e) {
-            System.err.println(e.getMessage());
-        }
-
-    }*/
+    }
         /**
     public static List<Object> list(Object... elements) {
         LinkedList<Object> list = new LinkedList<>();
@@ -58,5 +28,5 @@ public class Main {
         }
         return list;
     }*/
-    }
+
 }
