@@ -3,6 +3,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -26,10 +27,22 @@ public class Worker {
         ArrayList<String> parentesis = Worker.getElementsInsideParentheses(instruccions);
 
 
-            for (String string: parentesis){
+            for (String string: instruccions){
                 if (string.equals("+") || string.equals("-") || string.equals("*") || string.equals("/")) {
                     int result = Arithmetic.evaluate(parentesis);
                     System.out.println(result);
+                }
+                else if (string.equals("q")){
+                    ArrayList<String> arrayList1 = Reader.readFile(path);
+                    LinkedList<String> linkedList = reader.convertArrayList(arrayList1);
+
+
+                    ArrayList<String> text;
+                    text = getElementsAfterQuote(linkedList);
+                    for (String word: text){
+                        System.out.println(word);
+                    }
+
                 }
 
 
@@ -69,7 +82,28 @@ public class Worker {
         return elementsInParentheses;
     }
 
-        public static ArrayList<String> splitAarraylist(ArrayList<String> lista) {
+    public static ArrayList<String> getElementsAfterQuote(LinkedList<String> linkedList) {
+        ArrayList<String> elements = new ArrayList<>();
+        boolean foundQuote = false;
+        for (String item : linkedList) {
+            if (item.equals("quote")) {
+                foundQuote = true;
+            } else if (foundQuote && item.endsWith(")")) {
+                // Agregar todo lo que sigue después de "quote" hasta el paréntesis de cierre
+                String insideQuote = item.substring(0, item.length() - 1);
+                elements.addAll(Arrays.asList(insideQuote.split("\\s+")));
+                foundQuote = false;
+            } else if (foundQuote) {
+                // Agregar elementos dentro de "quote" a la lista
+                elements.addAll(Arrays.asList(item.split("\\s+")));
+            }
+        }
+        return elements;
+    }
+
+
+
+    public static ArrayList<String> splitAarraylist(ArrayList<String> lista) {
             String str = lista.get(0);
             char[] chars = str.toCharArray();
             ArrayList<String> resultado = new ArrayList<String>();
