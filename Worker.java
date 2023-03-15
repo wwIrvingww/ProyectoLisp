@@ -145,11 +145,28 @@ public class Worker {
             System.out.println(firsWord);
 
             if (reservedWords1.getReservedWords().contains(firsWord)){
+                //Para operaciones aritmeticas
                 if (firsWord.equals("+") || firsWord.equals("-") || firsWord.equals("*") || firsWord.equals("/")){
                     int result = Arithmetic.evaluate(instruction);
                     System.out.println("el resultado es: " + result);
+                }
+
+                //Para la instruccion quote
+                else if (firsWord.equals("quote") || firsWord.equals("'")){
+                    ArrayList<String> expression = new ArrayList<>();
+
+                    for (String s:arrayWords){
+                        if (s != "quote" || s!= "'" ){
+                            expression.add(s);
+                        }
+                    }
+                    Quote quote = new Quote(expression);
 
                 }
+
+                //Para la instrucción setq
+
+
 
             }
 
@@ -177,6 +194,6 @@ public class Worker {
         }
         return arrayList;
     }
-    
+
 }
 
