@@ -116,6 +116,68 @@ public class Worker {
 
             return resultado;
         }
+    public ArrayList<String> darArraylist(String string){
+
+        String[] array = string.split(" ");
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for (String s : array) {
+            String trimmed = s.trim();  // Eliminar espacios en blanco
+            if (!trimmed.isEmpty()) {   // Ignorar cadenas vacías
+                arrayList.add(trimmed); // Agregar al ArrayList
+            }
+        }
+        return arrayList;
+
+
+    }
+    public void recorrerLinkedList(LinkedListt<String> linkedListt){
+        ReservedWords reservedWords1 = new ReservedWords();
+        Node<String> current = linkedListt.getHead();
+        ArrayList<String> arrayWords = darArraylist(current.getValue());
+        String firsWord = arrayWords.get(0);
+        ArrayList<String> instruction;
+
+        while (current != null) {
+            // Procesar el valor actual del nodo
+            //System.out.println(current.getValue());
+            instruction = stringToArraylist(current.getValue());
+            System.out.println(firsWord);
+
+            if (reservedWords1.getReservedWords().contains(firsWord)){
+                System.out.println("Palabra reservada: "+ firsWord);
+
+            }
+
+
+
+
+
+
+
+            // Pasar al siguiente nodo
+            current = current.getNext();
+        }
+
+    }
+    public ArrayList<String> stringToArraylist(String string){
+        String[] array = string.split(",");
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            String s = Character.toString(c);
+            if (!s.trim().isEmpty()) {
+                arrayList.add(s);
+            }
+        }
+        return arrayList;
+    }
+
+
+
+
+
 
 
 
