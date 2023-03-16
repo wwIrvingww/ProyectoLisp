@@ -1,4 +1,3 @@
-
 public class LinkedListt<T> {
     private Node<T> head;
     private int size;
