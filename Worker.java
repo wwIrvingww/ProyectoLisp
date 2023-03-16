@@ -198,6 +198,37 @@ public class Worker {
 
                 }
 
+                if (firsWord.equals("atom") || firsWord.equals("list") || firsWord.equals("<") || firsWord.equals(">") ){
+                    if (firsWord.equals("atom")){
+                        System.out.println(Predicate.atom(arrayWords.get(1)));
+
+                    }
+                    if (firsWord.equals("list")){
+                        System.out.println(Predicate.list(arrayWords.get(1)));
+                    }
+                    if (firsWord.equals("<")){
+                        ArrayList<Integer> numeros = new ArrayList<>();
+                        for (String elemento : instruction) {
+                            if (elemento.matches("\\d+")) { // Verifica si es un número
+                                numeros.add(Integer.parseInt(elemento));
+                            }
+                        }
+                        System.out.println(Predicate.greaterThan(numeros.get(0),numeros.get(1)));
+                    }
+                    if (firsWord.equals(">")){
+                        ArrayList<Integer> numeros = new ArrayList<>();
+                        for (String elemento : instruction) {
+                            if (elemento.matches("\\d+")) { // Verifica si es un número
+                                numeros.add(Integer.parseInt(elemento));
+                            }
+                        }
+                        System.out.println(Predicate.lessThan(numeros.get(0),numeros.get(1)));
+                    }
+
+
+
+                }
+
 
 
             }
@@ -228,4 +259,5 @@ public class Worker {
     }
 
 }
+
 
