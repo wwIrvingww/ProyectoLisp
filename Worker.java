@@ -14,9 +14,7 @@ public class Worker {
     Reader reader = new Reader();
     ReservedWords reservedWords = new ReservedWords();
 
-    /**public Worker(LinkedList<String> instruccions) {
-        this.instruccions = new LinkedList<>();
-    }*/
+
 
     //------------------------------------------------------------------//
     public void work() {
@@ -165,6 +163,40 @@ public class Worker {
                 }
 
                 //Para la instrucción setq
+                if (firsWord.equals("setq")) {
+                    Setq<String, String> setq = new Setq<>();
+
+                    String name = "";
+                    String value = "";
+                    String s;
+                    int i = 0;
+                    while (i<instruction.size()){
+                        s = instruction.get(i);
+                        if (s.equals("\"")){
+                            name = instruction.get(i+1);
+                            i++;
+                        }
+                        else if(s.equals(",")){
+                            value = instruction.get(i+1);
+                            i++;
+                        }
+                        else {i++;}
+
+                    }
+
+                    setq.setq(name,value);
+                    System.out.println(setq.get(name));
+
+
+
+
+
+
+
+
+
+
+                }
 
 
 

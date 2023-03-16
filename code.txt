@@ -1,3 +1,2 @@
-me quiero matar.
-me voy a dar de baja.
-adios.
+setq ("x",1)
+setq ("y,2)

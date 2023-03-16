@@ -1,1 +1,2 @@
-quote(hoy me puse linda para verte)
+setq ("x",1)
+setq ("y,2)
