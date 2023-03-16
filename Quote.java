@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class Quote {
 
-    public  Quote (String expression){
-        System.out.println(expression);
+    public  Quote (ArrayList<String> expression){
+        for (String str : expression) {
+            System.out.print(str + " ");
+        }
     }
 
 }
+
